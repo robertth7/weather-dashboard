@@ -19,17 +19,22 @@
                 <h3 class="card-header text-uppercase">Search By City</h3>
                 <form id="city-form" class="card-body">
                     <label class="form-label" for="city">City</label>
-                    <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+                    <input name="city" id="city" type="text" autofocus="true" class="inputValue" />
                     <button type="submit" class="btn btn-primary">Search</button>
                     
                 </form>
             </div>
         </div>
-
         <div class="col-12 col-md-8">
             <h2 class="subtitle">Showing Weather for: <span id="city-search"></span></h2>
             <div id="city-container" class="list-group"></div>
         </div>
+        <div class="col-12 col-md-8">
+            <h2>Showing Forecast:</h2>
+            <span id="forecast"></span>
+            <div id="list-container" class="list-group"></div>
+        </div>
+
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
