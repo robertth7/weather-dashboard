@@ -10,30 +10,39 @@
 
 <body class="flex-column min-100-vh">
     <header class="hero">
-        <h1 class="app-title">Weather Dashboard</h1>
+        <div class="card text-center">
+            <h1 class="app-title">Weather Dashboard</h1>
+        </div>
     </header>
 
-    <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-4">
-            <div class="card">
-                <h3 class="card-header text-uppercase">Search By City</h3>
-                <form id="city-form" class="card-body">
-                    <label class="form-label" for="city">City</label>
-                    <input name="city" id="city" type="text" autofocus="true" class="inputValue" />
-                    <button type="submit" class="btn btn-primary">Search</button>
-                    
-                </form>
+    <main class="flex-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card text-center">
+                        <h3 class="card-header text-uppercase">Search By City</h3>
+                        <form id="city-form" class="card-body ">
+                            <label class="form-label" for="city">City</label>
+                            <input name="city" id="city" type="text" autofocus="true" class="inputValue" />
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                        <div class="card text-center">
+                            <h4>Recently searched for:</h6>
+                                <div class="card" id="searched">
+                                    <h6>Austin</h6>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-8">
+                        <h2 class="subtitle"><span id="city-search"></span></h2>
+                        <div id="city-container" class="list-group"></div>
+                            <h2>5-Day Forecast: <span id="forecast"></span></h2>
+                            <div id="list-container" class="card-deck"></div>
+                    </div>
             </div>
         </div>
-        <div class="col-12 col-md-8">
-            <h2 class="subtitle">Showing Weather for: <span id="city-search"></span></h2>
-            <div id="city-container" class="list-group"></div>
-        </div>
-        <div class="col-12 col-md-8">
-            <h2>Showing Forecast:</h2>
-            <span id="forecast"></span>
-            <div id="list-container" class="list-group"></div>
-        </div>
+
 
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

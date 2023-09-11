@@ -30,6 +30,10 @@ var formSubmitHandler = function(event) {
 
     // get value from input element and storing into a variable
     var cityName = nameInputEl.value.trim();
+
+    // setting searched city into localStorage
+    localStorage.setItem("city", cityName);
+    console.log(localStorage);
     
     // if there is a value to cityName, we pass that data to getWeather() as an argument. then we clear out the <input> element's value.
     if (cityName) {
@@ -42,7 +46,7 @@ var formSubmitHandler = function(event) {
 
 // create new function. this function will accept both the array of data and the term we searched for as parameters. 
 var displayCurrentWeather = function(data, citySearch) {
-    // console.log(data.main.temp);
+    console.log(data.weather[0].icon);
     // console.log(citySearch);
 
     // make dt readable/understandable
@@ -106,6 +110,10 @@ var forecast = function(data) {
 };
 
 var displayForecast = function(list) {
+
+    // this will clear out the previously searched card. doing so will prevent the previous from staying
+    listContainerEl.textContent = "";
+
     // loop over data
     for (var i = 0; i < list.list.length; i++) {
         // console below lets me know which array we are on
@@ -126,18 +134,19 @@ var displayForecast = function(list) {
 
         // create a div with classes
         var listEl = document.createElement("div");
-        listEl.classList = "list-item flex-row justify-space-between";
-        
+        listEl.classList = "card text-white bg-primary mb-2";
+
         for (var key in forecastData) {
             console.log(key, forecastData[key]);
             
-            // // create a div with classes
+            // create a div with classes
             // var listEl = document.createElement("div");
             // listEl.classList = "list-item flex-row justify-space-between";
             
             // create a span element and add values to display on page
             var nameEl = document.createElement("span");
-            nameEl.textContent = key + ": " + forecastData[key];
+            // nameEl.classList = "list-item flex-row justify-space-between align-center";
+            nameEl.textContent = key + ": " + forecastData[key] + " ";
 
             // append nameEl to div listEl
             listEl.appendChild(nameEl);
